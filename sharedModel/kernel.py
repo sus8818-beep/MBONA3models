@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import linealg
 from numpy.typing import NDArray
