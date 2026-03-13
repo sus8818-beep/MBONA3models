@@ -1,0 +1,11 @@
+parameters:
+  - name: "gamma"
+    value: 0.5
+    description: "1/variance of Gaussian kernel."
+  - name: "Datasets"
+    -dataname: "Hidden Markov Model"
+        -path: ""
+     datalinks: "https://en.wikipedia.org/wiki/Hidden_Markov_model"
+     datadescription: "A statistical model that represents a system with hidden states and observable outputs."
+    description: "The regularization parameter for the model."
+	--
