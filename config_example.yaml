@@ -1,0 +1,11 @@
+# Example YAML configuration for mainWorker4model1.py
+# Fields required by the script:
+#   gamma: float
+#   inputsize: integer (number of input features per instance)
+#   outputsize: integer (number of output values per instance)
+#   budget: integer (model budget parameter)
+
+gamma: 0.00001
+inputsize: 5
+outputsize: 40
+budget: 20
