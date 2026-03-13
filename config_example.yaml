@@ -1,4 +1,4 @@
-# Example YAML configuration for mainWorker4model1.py
+# Example YAML configuration for mainWorker4model1-3.py
 # Fields required by the script:
 #   gamma: float
 #   inputsize: integer (number of input features per instance)
