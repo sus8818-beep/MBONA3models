@@ -2,8 +2,8 @@ from sharedModel.kernelPerceptron import kernelPerceptron
 from sharedModel.kernel import kernel
 
 class model2(model1):
-    def __init__(self, gamma, budget, ErrThreshold, ShrinkRatio, RmThreshold):
-        super(model2, self).__init__(gamma, budget, ErrThreshold, ShrinkRatio, RmThreshold)
+    def __init__(self, gamma, budget, phi, RmThreshold):
+        super(model2, self).__init__(gamma, budget, phi, RmThreshold)
 
 
     def learning(self, x, y) -> void:
@@ -16,4 +16,4 @@ class model2(model1):
             self.kernels.remove(targetKernel)
             self.kernels.append(kernel.kernel(x, y, self.gamma))
 
-        self.Shrinkage(self.ShrinkRatio)
+        self.Shrink(self.phi)

@@ -2,11 +2,10 @@ from sharedModel.kernelPerceptron import kernelPerceptron
 from sharedModel.kernel import kernel
 
 class model1(kernelPerceptron):
-    def __init__(self, gamma, budget, ErrThreshold, ShrinkRatio, RmThreshold):
+    def __init__(self, gamma, budget, phi, RmThreshold):
         super(model1, self).__init__(gamma)
         self.budget = budget
-        self.ErrThreshold = ErrThreshold
-        self.ShrinkRatio = ShrinkRatio
+        self.phi = phi
         self.RmThreshold = RmThreshold
 
     def learning(self, x, y):
@@ -19,15 +18,15 @@ class model1(kernelPerceptron):
             if targetKernel.sigma < self.RmThreshold:
                 self.kernels.remove(targetKernel)
                 self.kernels.append(kernel.kernel(centroid, y, self.gamma))
-        self.Shrinkage(self.ShrinkRatio)
+        self.Shrink(self.phi)
 
     def getOldestKernel(self) -> kernel:
         OldestObj = min(self.kernels, key=lambda k: k.sigma)
         return OldestObj
 
-    def Shrinkage(self, shrinkRatio):
+    def Shrink(self, phi):
         for eachKernel in self.kernels:
-            eachKernel.decaySigma(shrinkRatio)
+            eachKernel.decaySigma(phi)
             
 
     
