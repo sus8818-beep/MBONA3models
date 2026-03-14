@@ -33,7 +33,7 @@ class mainWorker4model2:
                         continue
                     try:
                         error = self.model.ClassificationErr(x, y)
-                        print(f"mainWorker4model1.run() ClassificationErr: {error}")
+                        print(f"mainWorker4model2.run() ClassificationErr: {error}")
                     except Exception as e:
                         # If the model raises, log and skip this instance
                         print(f"Warning: mainWorker4model2.run() Exception! ClassificationErr raised for line: {e}")
@@ -57,7 +57,7 @@ class mainWorker4model2:
         parts = [p for p in line.strip().split(',') if p != '']
         if len(parts) < (self.inputsize + self.outputsize):
             # not enough columns
-            print(f"mainWorker4model1.getSingleInstance() Warning: expected at least {self.inputsize + self.outputsize} columns, got {len(parts)}")
+            print(f"mainWorker4model2.getSingleInstance() Warning: expected at least {self.inputsize + self.outputsize} columns, got {len(parts)}")
             return None, None
         x = []
         y = []
@@ -67,17 +67,17 @@ class mainWorker4model2:
             for j in range(self.inputsize, self.inputsize + self.outputsize):
                 y.append(float(parts[j]))
         except ValueError as e:
-            print(f"mainWorker4model1.getSingleInstance() ValueError: failed to parse floats in line: {e}")
+            print(f"mainWorker4model2.getSingleInstance() ValueError: failed to parse floats in line: {e}")
             return None, None
         return x, y
 
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description="Run model1 with specified parameters.")
+    parser = argparse.ArgumentParser(description="Run model2 with specified parameters.")
     parser.add_argument('--yaml', type=str, required=True, help='Path to the YAML configuration file.')
     parser.add_argument('--data', type=str, required=True, help='Path to the input data file.')
-    parser.add_argument('--phi', type=float, required=True, help='Decay factor for the model1.')
+    parser.add_argument('--phi', type=float, required=True, help='Decay factor for the model2.')
     parser.add_argument('--results', type=str, required=True, help='Path to save the results file.')
     return parser.parse_args()
 
@@ -99,6 +99,6 @@ if __name__ == "__main__":
             candidate = f"{yaml_root}.results.{counter}.txt"
         print(f"Warning: --results path is the same as --yaml. Using '{candidate}' for results to avoid overwriting the config.")
         args.results = candidate
-    print("Start mainWorker4model1")
+    print("Start mainWorker4model2")
     worker = mainWorker4model2(args.yaml, args.data, args.phi, args.results)
     worker.run()
