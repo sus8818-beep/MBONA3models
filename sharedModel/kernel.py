@@ -18,7 +18,7 @@ class kernel:
         self.currentExpout = math.exp(-diff * self.__gamma)
         z = (self.currentExpout * self.sigma) * self.Y
         if self.DEBUG:
-            print(f"kernel.Out() diff: {diff}, exp(-diff*gamma): {self.currentExpout}, self.Y: {self.Y}, sigma: {self.sigma}, output[0]: {z[0]}")
+            print(f"kernel.Out() diff: {diff}, exp(-diff*gamma): {self.currentExpout}, self.Y: {self.Y}, sigma: {self.sigma}, output: {z}")
         return z
 
     def decaySigma(self, decayRate):
