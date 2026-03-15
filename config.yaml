@@ -5,7 +5,7 @@
 #   outputsize: integer (number of output values per instance)
 #   budget: integer (model budget parameter)
 
-gamma: 0.00001
+gamma: 4.0
 inputsize: 5
 outputsize: 40
 budget: 20
