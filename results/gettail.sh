@@ -20,7 +20,7 @@ do
       done
    done
 
-   # forgetron$p.csvとLRU$p.csvを結合して新しいファイルに保存
+   # concatinate forgetron$p.csv and LRU$p.csv and save it to combined_LRU$p.csv
    paste -d' ' forgetron$p.csv LRU$p.csv > combined_LRU$p.csv
 
 done
