@@ -5,7 +5,7 @@ do
    do
       for k in $(seq 0 49)
       do
-        RATIO=$(awk -v v="$i" 'BEGIN{printf "%.10g", 0.1+v/100}')
+        RATIO=$(awk -v v="$i" 'BEGIN{printf "%.2f", 0.1+v/100}')
         yes | tar -xvf results-model2-0.$p-0.5.tgz model2result0.$p-0.5-$RATIO-$k.dat
         yes | tar -xzvf results-model3-0.$p-0.5.tgz model3result0.$p-0.5-$RATIO-$k.dat
         if [ $i -eq 0 ]; then
