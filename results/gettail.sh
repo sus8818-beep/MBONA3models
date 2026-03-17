@@ -9,8 +9,13 @@ do
         yes | tar -xvf results-model2-0.$p-0.5.tgz model2result0.$p-0.5-$RATIO-$k.dat
         yes | tar -xzvf results-model3-0.$p-0.5.tgz model3result0.$p-0.5-$RATIO-$k.dat
         if [ $i -eq 0 ]; then
-           tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > forgetron$p.csv
-           tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > LRU$p.csv
+           if [ $k -eq 0 ]; then
+               tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > forgetron$p.csv
+               tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > LRU$p.csv
+           else
+               tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p.csv
+               tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p.csv
+           fi
         else
            tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p.csv
            tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p.csv
