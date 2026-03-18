@@ -1,3 +1,9 @@
+# model3.py by K.Yamauchi
+# Please make sure that class model3 extends class model2. 
+# Although this source code does not include learning(), model3.learning() is the same as model2.learning().
+# Out() is overrided.
+# getWinnerKernel() is newly introduced.
+
 from .model2 import model2
 from sharedModel.kernel import kernel
 import numpy as np
