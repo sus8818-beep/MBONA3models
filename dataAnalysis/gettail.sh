@@ -1,7 +1,13 @@
+# gettail.sh
+# This shell script pick up the last cumulative error of each file and unified into combined_LRU?.sh
+# combined_LRU?.sh shows differences between model2 vs model3 in cumulative errors.
+# You should customise RESULTDIR in line 6 if you need it.
 #!/bin/sh
+RESULTDIR=../results
+cd $RESULTDIR
 for p in $(seq 1 9)
 do
-   for i in $(seq 0 100)
+   for i in $(seq 60 80)
    do
       for k in $(seq 0 49)
       do
@@ -29,4 +35,5 @@ do
    paste -d' ' forgetron$p.csv LRU$p.csv > combined_LRU$p.csv
 
 done
+cd -
 
