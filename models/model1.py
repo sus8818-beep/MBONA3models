@@ -24,7 +24,7 @@ class model1(kernelPerceptron):
                 targetKernel = self.getOldestKernel()
                 if targetKernel.sigma * self.phi < self.RmThreshold:
                     self.kernels.remove(targetKernel)
-	            self.kernels.append(kernel(x, y, self.gamma))
+                    self.kernels.append(kernel(x, y, self.gamma))
                     if self.DEBUG:
                         print(f"model1.Learning() remove oldest kernel")
             self.Shrink(self.phi)

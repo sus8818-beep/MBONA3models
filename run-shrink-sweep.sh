@@ -125,15 +125,15 @@ for ((n=0; n<NUM; n++)); do
     ratio=$(awk -v x=$i 'BEGIN{printf("%.2f", x/100)}')
     case "$EXECODE" in
         "mainWorker4model2.py")
-            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat" > /dev/null 2>&1 &
+            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat" > log-model2.txt 2>&1 &
             ;;
             
         "mainWorker4model1.py")
-            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat"  --rmThreshold "$RMTHRESHOLD" > /dev/null 2>&1 &
+            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat"  --rmThreshold "$RMTHRESHOLD" > log-model1.txt 2>&1 &
             ;;
 
         "mainWorker4model3.py")
-            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat"  --spontaneousPhi "$SPONTANEOUSPHI" > /dev/null 2>&1 &
+            nohup python3 "$EXECODE" --yaml "$PARAM" --data "$DATA-$n.csv" --phi "$ratio" --results "$RESULT-$ratio-$n.dat"  --spontaneousPhi "$SPONTANEOUSPHI" > log-model3.txt 2>&1 &
             ;;
     esac
     throttle
