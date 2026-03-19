@@ -22,9 +22,12 @@ In this directory, there are three mainWorkers:
 ```mainWorker4model1.py```, ```mainWorker4model2.py```, ```mainWorker4model3.py```.
 
 ### mainWorker4model1.py
-
+You can get the detailed command line options by
 ```
 python3 mainWorker4model1.py -h
+```
+Then, you can obtain
+```
 usage: mainWorker4model1.py [-h] --yaml YAML --data DATA --phi PHI --rmThreshold RMTHRESHOLD --results
                             RESULTS
 
@@ -39,7 +42,12 @@ options:
                         rmThreshold for the model1.
   --results RESULTS     Path to save the results file.
 ```
-Example:
+Example of usage:
 ```
 python3 mainWorker4model1.py --yaml config.yaml --data ./dataset/data0.1-0.5-0.csv --phi 0.8 --results result.dat  --rmThreshold 0.001
+```
+The command lines for model1,2,3 are almost the same, but there are model specific command lines as follows.
+```
+model1: --rmthreshold    : Pruning threshold
+model3: --spontaneousPhi : Spontaneous weight shrinkage parameter
 ```
