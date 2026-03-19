@@ -22,6 +22,10 @@ In this directory, there are three mainWorkers:
 ```mainWorker4model1.py```, ```mainWorker4model2.py```, ```mainWorker4model3.py```.
 
 ### mainWorker4model1.py
+mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
+The results are represented by a cumulative error. The error is written in the specified CSV file.
+If the cumulative error is low, the learning model is better.
+
 You can get the detailed command line options by
 ```
 python3 mainWorker4model1.py -h
