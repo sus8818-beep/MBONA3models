@@ -14,7 +14,7 @@ For example,
 ```
 source ~/venv/bin/activate
 ```
-The root directory is
+Enter root directory:
 ```
 cd MBONA3models
 ```
