@@ -11,17 +11,21 @@ clone git@github.com:sus8818-beep/MBONA3models.git
 ```
 ## Usage
 
-Enter your python virtual environment.
-For example,
+1) Enter your python virtual environment. For example,
 ```
 source ~/venv/bin/activate
 ```
-Enter root directory:
+2) Enter root directory:
 ```
 cd MBONA3models
 ```
 In this directory, there are three mainWorkers: 
 ```mainWorker4model1.py```, ```mainWorker4model2.py```, ```mainWorker4model3.py```.
+These codes make run each learning model. Their behaviors can be controlled by commandlines.
+The commandlines for these three codes are almost the same.
+In the following explanation, standard usage is shown in the case of model1.
+Actually, the there are slightly different command line options in model2 and model3.
+You can see the detailed examples in ```run-shrink-sweep.sh```
 
 ### mainWorker4model1.py
 mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
