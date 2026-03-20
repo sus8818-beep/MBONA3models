@@ -1,8 +1,10 @@
 # MBONA3models
 Three kernelized learning models for insect brain: (Dorsophilla Mushroom body Output Neurons,  alpha'3 compartment)
 ## Requirements 
+```
 python3.12
-numpy1.26.3 
+numpy1.26.3
+```
 ## Install
 ```
 clone git@github.com:sus8818-beep/MBONA3models.git
