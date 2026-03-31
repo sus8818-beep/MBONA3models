@@ -2,14 +2,16 @@
 Three kernelized learning models for insect brain: (Dorsophilla Mushroom body Output Neurons,  alpha'3 compartment)
 ## Requirements 
 ```
+Linux environment(Ubuntu 24.04 is recommended) or WSL2 (in the case of Windows11 environment)
 python3.12
 numpy1.26.3
+gnuplot6.0
 ```
 ## Install
 ```
 clone git@github.com:sus8818-beep/MBONA3models.git
 ```
-## Usage
+## Usage 
 
 1) Enter your python virtual environment. For example,
 ```
@@ -27,6 +29,42 @@ In the following explanation, standard usage is shown in the case of model1.
 Actually, the there are slightly different command line options in model2 and model3.
 You can see the detailed examples in ```run-shrink-sweep.sh```
 
+3) Edit config.yaml
+```config.yaml``` is the shared parameters for model1, model2 and model3.
+Please customize the parameters to make them be suit to your specifications.
+```
+# Example YAML configuration for mainWorker4model1-3.py
+# Fields required by the script:
+#   gamma: float
+#   inputsize: integer (number of input features per instance)
+#   outputsize: integer (number of output values per instance)
+#   budget: integer (model budget parameter)
+
+gamma: 4.0
+inputsize: 5
+outputsize: 40
+budget: 20
+```
+The meaning of each parameter is described in our paper.
+
+3) Execute simulations
+```
+./goall4model1.sh
+./goall4model2.sh
+./goall4model3.sh
+```
+It takes a little bit long time to complete them.
+After finishing the programs, you can find archived result files in results/.
+The archived files are to be used to the next data-analysis.
+
+5) Execute data analysis
+```
+cd dataAnalysis
+./goallDataAnalysis.sh
+```
+After finishing the data-analysis process, you can find the resultant figures in png format.
+
+## The detailed usage for mainWorker4model[1-3].py
 ### mainWorker4model1.py
 mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
 The results are represented by a cumulative error. The error is written in the specified CSV file.
@@ -61,3 +99,4 @@ The command lines for model1,2,3 are almost the same, but there are model specif
 model1: --rmthreshold    : Pruning threshold
 model3: --spontaneousPhi : Spontaneous weight shrinkage parameter
 ```
+## DataAnalysis
