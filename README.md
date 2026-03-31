@@ -99,4 +99,13 @@ The command lines for model1,2,3 are almost the same, but there are model specif
 model1: --rmthreshold    : Pruning threshold
 model3: --spontaneousPhi : Spontaneous weight shrinkage parameter
 ```
-## DataAnalysis
+## datasets
+The datasets are stored in ```./datasets/```.
+In this directory, a large number of dataset files. These files are used for the learning of model1, model2 and model3.
+You can also find the python code ```NonIIDGeneratorPlus.py```.
+This code is for generating the dataset files. 
+The dataset is based on a Markov chain model.
+You can re-generate the dataset files by
+```
+python3 NonIIDGeneratorPlus.py
+```
