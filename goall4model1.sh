@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 RESULTDIR=./results
 DATASETDIR=./dataset
 SYSTEMDIR=./
