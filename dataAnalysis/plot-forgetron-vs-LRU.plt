@@ -11,7 +11,8 @@
 #    	faq, bugs, etc:   type "help FAQ"
 #    	immediate help:   type "help"  (plot window: hit 'h')
 # set terminal qt 0 font "Sans,10"
-# set output
+set term png
+set output 'model2-vs-model3.png'
 unset clip points
 set clip one
 unset clip two
@@ -181,5 +182,5 @@ VoxelDistance = 0.0
 GridDistance = 0.0
 ## Last datafile plotted: "combined_LRU9.csv"
 plot '../results/combined_LRU1.csv' ti '(Ps,Pc)=(0.1,0.5)', '../results/combined_LRU5.csv' ti '(Ps,Pc)=(0.5,0.5)', '../results/combined_LRU9.csv' ti '(Ps,Pc)=(0.9,0.5)', x ti 'y=x'
-pause -1
+#pause -1
 #    EOF
