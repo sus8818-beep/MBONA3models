@@ -21,13 +21,13 @@ source ~/venv/bin/activate
 ```
 cd MBONA3models
 ```
-In this directory, there are three mainWorkers: 
-```mainWorker4model1.py```, ```mainWorker4model2.py```, ```mainWorker4model3.py```.
-These codes make run each learning model. Their behaviors can be controlled by commandlines.
+You can find following three mainWorkers: 
+```mainWorker4model1.py```, ```mainWorker4model2.py``` and  ```mainWorker4model3.py```.
+These codes execute each learning model. 
 The commandlines for these three codes are almost the same.
 In the following explanation, standard usage is shown in the case of model1.
-Actually, the there are slightly different command line options in model2 and model3.
-You can see the detailed examples in ```run-shrink-sweep.sh```
+Actually, there are slightly different command line options in model2 and model3.
+You can find the differences in ```run-shrink-sweep.sh```
 
 3) Edit config.yaml
 ```config.yaml``` is the shared parameters for model1, model2 and model3.
@@ -49,10 +49,10 @@ The meaning of each parameter is described in our paper.
 
 3) Execute simulations
 ```
-./goall4model1.sh
-./goall4model2.sh
-./goall4model3.sh
+./goall.sh
 ```
+goall.sh calls following three shell scripts:
+```goall4model1.sh```,```goall4model2.sh``` and ```goall4model3.sh```.
 It takes a little bit long time to complete them.
 After finishing the programs, you can find archived result files in results/.
 The archived files are to be used to the next data-analysis.
@@ -68,7 +68,7 @@ After finishing the data-analysis process, you can find the resultant figures in
 ### mainWorker4model1.py
 mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
 The results are represented by a cumulative error. The error is written in the specified CSV file.
-If the cumulative error is low, the learning model is better.
+If the cumulative error is lower than the others, the learning model is best one in terms of accuracy.
 
 You can get the detailed command line options by
 ```
