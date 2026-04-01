@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
  #goallAnalysis.sh execute all shell-scripts.
  #
  # for model1
