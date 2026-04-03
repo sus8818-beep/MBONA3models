@@ -7,13 +7,13 @@ RESULTDIR=../results
 cd $RESULTDIR
 for p in $(seq 1 9)
 do
-   for i in $(seq 60 80)
+   for i in $(seq 50 70)
    do
       for k in $(seq 0 49)
       do
         RATIO=$(awk -v v="$i" 'BEGIN{printf "%.2f", 0.1+v/100}')
         yes | tar -xvf results-model2-0.$p-0.5.tgz model2result0.$p-0.5-$RATIO-$k.dat
-        yes | tar -xzvf results-model3-0.$p-0.5.tgz model3result0.$p-0.5-$RATIO-$k.dat
+        yes | tar -xzvf results-model3-0.$p-0.5-sp0.999.tgz model3result0.$p-0.5-$RATIO-$k.dat
         if [ $i -eq 60 ]; then
            if [ $k -eq 0 ]; then
                tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > forgetron$p.csv
