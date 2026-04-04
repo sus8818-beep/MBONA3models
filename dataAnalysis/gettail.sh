@@ -16,32 +16,32 @@ fi
 cd $RESULTDIR
 for p in $(seq 1 9)
 do
-   for i in $(seq 60 70)
-   do
-      for k in $(seq 0 49)
-      do
-        RATIO=$(awk -v v="$i" 'BEGIN{printf "%.2f", 0.1+v/100}')
-        yes | tar -xvf results-model2-0.$p-0.5.tgz model2result0.$p-0.5-$RATIO-$k.dat
-        yes | tar -xzvf results-model3-0.$p-0.5-sp$SPONTANEOUS_SHRINKRATIO.tgz model3result0.$p-0.5-$RATIO-$k.dat
-        if [ $i -eq 60 ]; then
-           if [ $k -eq 0 ]; then
-               tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
-               tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
-           else
-               tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
-               tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
-           fi
-        else
-           tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
-           tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
-        fi
-        yes | rm model2result0.$p-0.5-$RATIO-$k.dat
-        yes | rm model3result0.$p-0.5-$RATIO-$k.dat
-      done
-   done
+   #for i in $(seq 60 70)
+   #do
+      #for k in $(seq 0 49)
+      #do
+        #RATIO=$(awk -v v="$i" 'BEGIN{printf "%.2f", 0.1+v/100}')
+        #yes | tar -xvf results-model2-0.$p-0.5.tgz model2result0.$p-0.5-$RATIO-$k.dat
+        #yes | tar -xzvf results-model3-0.$p-0.5-sp$SPONTANEOUS_SHRINKRATIO.tgz model3result0.$p-0.5-$RATIO-$k.dat
+        #if [ $i -eq 60 ]; then
+           #if [ $k -eq 0 ]; then
+               #tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
+               #tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- > LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
+           ##else
+               #tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
+               #tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
+           #fi
+        #else
+           #tail -n 1 model2result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv
+           #tail -n 1 model3result0.$p-0.5-$RATIO-$k.dat | cut -d' ' -f2- >> LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
+        #fi
+        #yes | rm model2result0.$p-0.5-$RATIO-$k.dat
+        #yes | rm model3result0.$p-0.5-$RATIO-$k.dat
+      #done
+   #done
 
    # concatinate forgetron$p.csv and LRU$p.csv and save it to combined_LRU$p.csv
-   paste -d' ' forgetron$p-SPONTANEOUS_SHRINKRATIO.csv LRU$p-$SPONTANEOUS_SHRINKRATIO.csv > combined_LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
+   paste -d' ' forgetron$p-$SPONTANEOUS_SHRINKRATIO.csv LRU$p-$SPONTANEOUS_SHRINKRATIO.csv > combined_LRU$p-$SPONTANEOUS_SHRINKRATIO.csv
 
 done
 cd -

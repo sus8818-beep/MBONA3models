@@ -181,6 +181,6 @@ I = {0.0, 1.0}
 VoxelDistance = 0.0
 GridDistance = 0.0
 ## Last datafile plotted: "combined_LRU9.csv"
-plot '../results/combined_LRU1-0.999.csv' ti '(Ps,Pc)=(0.1,0.5)', '../results/combined_LRU5-0.999.csv' ti '(Ps,Pc)=(0.5,0.5)', '../results/combined_LRU9-0.999.csv' ti '(Ps,Pc)=(0.9,0.5)', x ti 'y=x'
+plot '../results/combined_LRU1-0.999.csv' ti '(Ps,Pc)=(0.1,0.5)','../results/combined_LRU3-0.999.csv' ti '(Ps,Pc)=(0.3,0.5)','../results/combined_LRU5-0.999.csv' ti '(Ps,Pc)=(0.5,0.5)','../results/combined_LRU7-0.999.csv' ti '(Ps,Pc)=(0.7,0.5)', '../results/combined_LRU9-0.999.csv' ti '(Ps,Pc)=(0.9,0.5)', x ti 'y=x'
 #pause -1
 #    EOF
