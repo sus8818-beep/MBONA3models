@@ -124,7 +124,7 @@ set cbtics  norangelimit autofreq
 set rtics axis in scale 1,0.5 nomirror norotate  autojustify
 set rtics  norangelimit autofreq 
 unset ttics
-set title "" 
+set title "model2 vs model3 (Spontenous Shrink ratio:0.99)" 
 set title  font "" textcolor lt -1 norotate
 set timestamp bottom 
 set timestamp "" 
