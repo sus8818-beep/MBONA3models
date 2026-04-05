@@ -20,14 +20,15 @@ class model1(kernelPerceptron):
         if self.ClassificationErr(x,y) < 0:
             if len(self.kernels) < self.budget:
                 self.kernels.append(kernel(x, y, self.gamma))
+                self.Shrink(self.phi)
             else:
                 targetKernel = self.getOldestKernel()
                 if targetKernel.sigma * self.phi < self.RmThreshold:
                     self.kernels.remove(targetKernel)
                     self.kernels.append(kernel(x, y, self.gamma))
+                    self.Shrink(self.phi)
                     if self.DEBUG:
                         print(f"model1.Learning() remove oldest kernel")
-            self.Shrink(self.phi)
 
     def getOldestKernel(self) -> kernel:
         OldestObj = min(self.kernels, key=lambda k: k.sigma)
