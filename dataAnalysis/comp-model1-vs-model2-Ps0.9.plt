@@ -1,6 +1,6 @@
 set term png
 set output 'model1-vs-model2-Ps0.9.png'
-set title 'model1 vs model2 (Ps,Pc)=(0.9,0.5)' font "Arial,14"
+set title 'model1 vs model2 P=0.9' font "Arial,14"
 set xlabel 'Shrink ratio' font "Arial,12"
 set ylabel 'Mean cumulative errors' font "Arial,12"
 plot \
