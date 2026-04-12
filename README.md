@@ -102,9 +102,9 @@ model3: --spontaneousPhi : Spontaneous weight shrinkage parameter
 ## datasets
 The datasets are stored in ```./datasets/```.
 In this directory, a large number of dataset files. These files are used for the learning of model1, model2 and model3.
+The datasets were generated from a Hidden Markov model.
 You can also find the python code ```NonIIDGeneratorPlus.py```.
-This code is for generating the dataset files. 
-The dataset is based on a Markov chain model.
+This code is for generating the dataset files along with the Markov chain model. 
 You can re-generate the dataset files by
 ```
 python3 NonIIDGeneratorPlus.py
@@ -114,5 +114,5 @@ The filename shows the property of the recorded data:
 ```
 ./dataset/data[stay probability]-[state change probability to a neighboor state].csv
 ```
-The stay probability is corresponding to 'P_i' in our manuscript. The state change probability 'P_c' corresponds to 
-p(s_j | s_i) for i <> j. 
+The stay probability is corresponding to 'P_i' in our manuscript, which represents p(s_i | s_i). The state change probability 'P_c' denotes
+P_c = p(s_j | s_i) for i <> j. 
