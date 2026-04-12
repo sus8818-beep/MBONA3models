@@ -78,7 +78,7 @@ MBONA3models
 │   ├── comp-model1-vs-model2-Ps0.5.plt <--- employed by plot-model1-vs-model2.sh
 │   ├── comp-model1-vs-model2-Ps0.7.plt <--- employed by plot-model1-vs-model2.sh
 │   ├── comp-model1-vs-model2-Ps0.9.plt <--- employed by plot-model1-vs-model2.sh
-│   ├── example-of-behaviors.png    <--- following *.png files are the final results
+│   ├── example-of-behaviors.png    <--- following *.png files are examples for the final results
 │   ├── model1-vs-model2-Ps0.1.png
 │   ├── model1-vs-model2-Ps0.3.png
 │   ├── model1-vs-model2-Ps0.5.png
