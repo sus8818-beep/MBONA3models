@@ -144,6 +144,14 @@ There are three source codes 'model[1-3].py' for defineing model1, model2 and mo
 Please make sure that the class model2 extends model1 and class model3 extends model2.
 These classes are called from MBONA3models/makeWorker4model[1-3].py.
 
+### MBONA3models/sharedModel/
+This directory forms the module for 'sharedModel'.
+There are kernel.py and kernelPerceptron.py.
+class kernelPerceptron is defined in kernelPerceptron.py.
+class kernel is defined in kernel.py.
+class kernel is employed by class kernelPerceptron.
+The class kernelPerceptron is the parent class of the class model1: MBONA3models/models/model1.py.
+
 ## The detailed usage for mainWorker4model[1-3].py
 ### mainWorker4model1.py
 mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
