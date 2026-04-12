@@ -4,7 +4,7 @@
 # for making model1 data
 ./mk-model1-data.sh > /dev/null
 # for making model2 data
- ./summary_shrink_ratio.sh 2 > /dev/null
+./summary_shrink_ratio.sh 2 > /dev/null
 # make figures
 ./plot-model2-summary.sh
 ./plot-model1-summary.sh
