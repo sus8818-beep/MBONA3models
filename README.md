@@ -63,7 +63,7 @@ MBONA3models
 ├── mainWorker4model2.py <--- executed by goall4model2.sh
 ├── mainWorker4model3.py <--- executed by goall4model3.sh
 ├── dataAnalysis
-│   ├── goallAnalysis.sh <-- All data analysis procedures are executed.
+│   ├── goallAnalysis.sh <-- All data analysis procedures are executed. This shell script is called by MBONA3models/goall.sh
 │   ├── mk-model1-data.sh <-- called from goallAnalysis.sh
 │   ├── plot-example-behaviors.sh <-- called from goallAnalysis.sh
 │   ├── plot-model1-summary.sh <-- called from goallAnalysis.sh
