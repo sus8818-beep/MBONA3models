@@ -27,15 +27,15 @@ These codes execute three learning models: model1, model2 and model3, respective
 The commandlines for these three codes are almost the same.
 In the following explanation, standard usage is shown in the case of model1.
 Actually, there are slightly different command line options in model2 and model3.
-You can find the differences in ```run-shrink-sweep.sh```
+You can find an example of the usage in ```run-shrink-sweep.sh```.
 
 3) Edit config.yaml
-```config.yaml``` is the shared parameters for model1, model2 and model3.
-Please customize the parameters to make them be suit to your specifications.
+```config.yaml``` specified the shared parameter values for model1, model2 and model3.
+Please customize the parameter values to make them be suit to your specifications.
 ```
 # Example YAML configuration for mainWorker4model1-3.py
 # Fields required by the script:
-#   gamma: float
+#   gamma: float (the parameter determines kurtosis of kernels.)
 #   inputsize: integer (number of input features per instance)
 #   outputsize: integer (number of output values per instance)
 #   budget: integer (model budget parameter)
@@ -109,3 +109,10 @@ You can re-generate the dataset files by
 ```
 python3 NonIIDGeneratorPlus.py
 ```
+The generated datasets are a large number of csv format files.
+The filename shows the property of the recorded data:
+```
+./dataset/data[stay probability]-[state change probability to a neighboor state].csv
+```
+The stay probability is corresponding to 'P_i' in our manuscript. The state change probability 'P_c' corresponds to 
+p(s_j | s_i) for i <> j. 
