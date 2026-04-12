@@ -152,7 +152,7 @@ class kernel is defined in kernel.py.
 class kernel is employed by class kernelPerceptron.
 The class kernelPerceptron is the parent class of the class model1: MBONA3models/models/model1.py.
 
-## MBONA3models/datasets/
+### MBONA3models/datasets/
 The datasets are stored in this directory.
 These files are used for the learning of model1, model2 and model3.
 The datasets were generated from a Hidden Markov model.
