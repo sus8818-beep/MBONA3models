@@ -52,7 +52,7 @@ The archived files are used by ```../dataAnalysis/goallDataAnalysis.sh```, which
 ## Files in each Directory
 ```
 MBONA3models
-├── README.md
+├── README.md <---- This file.
 ├── config.yaml
 ├── goall.sh        <--- execute all
 ├── goall4model1.sh <--- called from goall.sh
