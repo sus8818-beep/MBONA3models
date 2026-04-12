@@ -23,7 +23,7 @@ cd MBONA3models
 ```
 You can find following three mainWorkers: 
 ```mainWorker4model1.py```, ```mainWorker4model2.py``` and  ```mainWorker4model3.py```.
-These codes execute each learning model. 
+These codes execute three learning models: model1, model2 and model3, respectively. 
 The commandlines for these three codes are almost the same.
 In the following explanation, standard usage is shown in the case of model1.
 Actually, there are slightly different command line options in model2 and model3.
