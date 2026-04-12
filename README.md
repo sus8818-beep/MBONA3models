@@ -152,6 +152,24 @@ class kernel is defined in kernel.py.
 class kernel is employed by class kernelPerceptron.
 The class kernelPerceptron is the parent class of the class model1: MBONA3models/models/model1.py.
 
+## MBONA3models/datasets/
+The datasets are stored in this directory.
+These files are used for the learning of model1, model2 and model3.
+The datasets were generated from a Hidden Markov model.
+You can also find the python code ```NonIIDGeneratorPlus.py```.
+This code is for generating the dataset files along with the Markov chain model. 
+You can re-generate the dataset files by
+```
+python3 NonIIDGeneratorPlus.py
+```
+The generated datasets are a large number of csv format files.
+The filename shows the property of the recorded data:
+```
+./dataset/data[stay probability]-[state change probability to a neighboor state].csv
+```
+The stay probability is corresponding to 'P_i' in our manuscript, which represents p(s_i | s_i). The state change probability 'P_c' denotes
+P_c = p(s_j | s_i) for i <> j. 
+
 ## The detailed usage for mainWorker4model[1-3].py
 ### mainWorker4model1.py
 mainWorker4model1.py make class model1 work. class model1 learns learning sample one by one in a online learning manner.
@@ -187,20 +205,3 @@ The command lines for model1,2,3 are almost the same, but there are model specif
 model1: --rmthreshold    : Pruning threshold
 model3: --spontaneousPhi : Spontaneous weight shrinkage parameter
 ```
-## datasets
-The datasets are stored in ```./datasets/```.
-In this directory, a large number of dataset files. These files are used for the learning of model1, model2 and model3.
-The datasets were generated from a Hidden Markov model.
-You can also find the python code ```NonIIDGeneratorPlus.py```.
-This code is for generating the dataset files along with the Markov chain model. 
-You can re-generate the dataset files by
-```
-python3 NonIIDGeneratorPlus.py
-```
-The generated datasets are a large number of csv format files.
-The filename shows the property of the recorded data:
-```
-./dataset/data[stay probability]-[state change probability to a neighboor state].csv
-```
-The stay probability is corresponding to 'P_i' in our manuscript, which represents p(s_i | s_i). The state change probability 'P_c' denotes
-P_c = p(s_j | s_i) for i <> j. 
