@@ -23,7 +23,7 @@ cd MBONA3models
 ```
 3) Edit config.yaml
 
-```config.yaml``` specified the shared parameter values for model1, model2 and model3.
+```config.yaml``` specifies the shared parameter values for model1, model2 and model3.
 Please customize the parameter values to make them be suit to your specifications.
 ```
 # Example YAML configuration for mainWorker4model1-3.py
@@ -31,7 +31,7 @@ Please customize the parameter values to make them be suit to your specification
 #   gamma: float (the parameter determines kurtosis of kernels.)
 #   inputsize: integer (number of input features per instance)
 #   outputsize: integer (number of output values per instance)
-#   budget: integer (model budget parameter)
+#   budget: integer (budget: the upper bound of kernel size)
 
 gamma: 4.0
 inputsize: 5
