@@ -1,5 +1,8 @@
 # MBONA3models
-Three kernelized learning models for insect brain: (Dorsophilla Mushroom body Output Neurons,  alpha'3 compartment)
+This repository provides the implementation of kernelized learning models associated with a manuscript submitted to PLOS Computational Biology.
+
+Three kernelized learning models for insect brain: (Drosophila Mushroom body Output Neurons, alpha'3 compartment)
+
 ## Requirements 
 ```
 Linux environment(Ubuntu 24.04 is recommended) or WSL2 (in the case of Windows11 environment)
