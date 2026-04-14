@@ -22,6 +22,7 @@ source ~/venv/bin/activate
 cd MBONA3models
 ```
 3) Edit config.yaml
+
 ```config.yaml``` specified the shared parameter values for model1, model2 and model3.
 Please customize the parameter values to make them be suit to your specifications.
 ```
